@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
   
   skip_before_action :authenticate, only: [:create, :login]
-  
+
   def index
     @users = User.all 
     render json: @users, status: :ok
+  end 
+
+  def profile
+    render json: @user, status: :ok # can add 'include key value pair' here (but need to set up relationships first)
   end 
 
   def create
