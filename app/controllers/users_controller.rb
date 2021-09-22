@@ -13,7 +13,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create user_params
-    render json: @user, status: :created
+
+    if @user
+      render json: @user, status: :created
+    else 
+      render json:{error: 'Oops! Something went wrong. Please check your credentials and try again'}, status: :unprocessable_entity
+    end
   end 
 
   def login
