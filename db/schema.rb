@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 2021_09_15_165739) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

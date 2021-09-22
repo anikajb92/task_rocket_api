@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end 
 
   def profile
-    render json: @user, status: :ok # can add 'include key value pair' here (but need to set up relationships first)
+    render json: {user: @user, categories: @user.categories}, status: :ok # can add 'include key value pair' here (but need to set up relationships first)
   end 
 
   def create
