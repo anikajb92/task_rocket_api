@@ -37,6 +37,12 @@ class UsersController < ApplicationController
         render json: {token: @token, user: @user}, status: :ok
       end
     end 
+  end
+  
+  def update
+    @user = User.find params[:id]
+    @user.update firstname: params[:firstname], lastname: params[:lastname] 
+    render json: @user, status: :updated
   end 
 
   private #PRIVATE!! 
