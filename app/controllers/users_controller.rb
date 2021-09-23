@@ -34,7 +34,7 @@ class UsersController < ApplicationController
         payload = {user_id: @user.id}
         secret = 'She knows everything about everyone.'
         @token = JWT.encode payload, secret
-        render json: {token: @token}, status: :ok
+        render json: {token: @token, user: @user}, status: :ok
       end
     end 
   end 
