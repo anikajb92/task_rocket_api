@@ -2,12 +2,14 @@
 
 one:
   description: MyString
-  category: one
+  category: MyString
   priority: 1
   completed: false
+  user: one
 
 two:
   description: MyString
-  category: two
+  category: MyString
   priority: 1
   completed: false
+  user: two
