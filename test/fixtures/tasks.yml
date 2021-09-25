@@ -5,11 +5,9 @@ one:
   category: MyString
   priority: 1
   completed: false
-  user: one
 
 two:
   description: MyString
   category: MyString
   priority: 1
   completed: false
-  user: two
