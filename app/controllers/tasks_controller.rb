@@ -11,11 +11,8 @@ class TasksController < ApplicationController
   end 
 
   def create 
-    byebug
     @new_task = Task.new task_params
     @new_task.user = @user 
-
-    byebug
 
     if @new_task.valid?
       @new_task.save
@@ -30,5 +27,5 @@ class TasksController < ApplicationController
     def task_params 
       params.require(:task).permit(:description, :priority, :completed, :category)
     end 
-    
+
 end
