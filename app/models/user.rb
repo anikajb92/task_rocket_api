@@ -65,4 +65,16 @@ class User < ApplicationRecord
     puts "You have been a member for #{time_diff} hours."
   end 
 
+  def most_productive_day
+    all_completed = self.tasks.where(completed: true)
+
+    completed_weekday = all_completed.map do |task|
+      finish_date = task.updated_at.strftime("%A")
+    end
+
+    completed_weekday.group_by(&:itself).transform_values(&:count)
+    # tally = ^
+    # tally.max
+  end
+
 end
