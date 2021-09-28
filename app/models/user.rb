@@ -23,7 +23,7 @@ class User < ApplicationRecord
     pending = total - all_completed
 
     # p "You have completed #{completed_percentage}% of your #{total} tasks, which leaves #{pending} remaining tasks to be completed! You can do it!"
-    ["all completed", all_completed, "completed perentage", completed_percentage, "total", total, "pending", pending]
+    ["all_completed", all_completed, "completed_perentage", completed_percentage, "total", total, "pending", pending]
   end 
 
   def num_tasks_per_category
@@ -32,7 +32,7 @@ class User < ApplicationRecord
     household = self.tasks.where(category: "Household").count
     social = self.tasks.where(category: "Social").count
 
-    ["work", work, "personal", personal, "household", household, "social", social]
+    ["Work", work, "Personal", personal, "Household", household, "Social", social]
   end 
 
   def avg_completion_time
