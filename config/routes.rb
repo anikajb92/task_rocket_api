@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :tasks, only: [:index, :create]
+  resources :tasks
   resources :users, only: [:index, :create]
   post '/login', to: 'users#login'
   get '/profile', to: 'users#profile'

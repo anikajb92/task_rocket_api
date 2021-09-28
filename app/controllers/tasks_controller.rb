@@ -22,6 +22,16 @@ class TasksController < ApplicationController
     end 
   end
 
+  def update
+    @task = Task.find params[:id]
+    @task.update task_params
+
+    if @task.save
+      render json: @task, status: :accepted
+    else
+      render json: {errors: @task.errors.full_messages}, status: :forbidden
+    end
+  end 
 
   private 
     def task_params 
