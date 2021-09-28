@@ -32,7 +32,7 @@ class User < ApplicationRecord
     household = self.tasks.where(category: "Household").count
     social = self.tasks.where(category: "Social").count
 
-    ["Work", work, "Personal", personal, "Household", household, "Social", social]
+    [["Work", work],["Personal", personal], ["Household", household], ["Social", social]]
   end 
 
   def avg_completion_time
