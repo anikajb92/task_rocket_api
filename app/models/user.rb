@@ -12,9 +12,10 @@ class User < ApplicationRecord
   end
   
   def completed_tasks
-    completed = self.tasks.where(completed: true)
-
-    completed
+    init_completed = self.tasks.where(completed: true)
+    sorted_completed = init_completed.sort_by { |task| [task.priority]}
+    
+    sorted_completed.reverse
   end
 
   def perc_tasks_completed

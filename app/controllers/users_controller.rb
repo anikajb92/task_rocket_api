@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end 
 
   def alltasks
-    render json: {tasks: @user.tasks}, 
+    render json: @user,
     methods: [:sorted_tasks, :completed_tasks], 
     status: :ok
   end 
