@@ -22,8 +22,8 @@ class User < ApplicationRecord
     completed_percentage = ((all_completed.to_f / total.to_f) * 100).to_i
     pending = total - all_completed
 
-    p "You have completed #{completed_percentage}% of your #{total} tasks, which leaves #{pending} remaining tasks to be completed! You can do it!"
-    [all_completed, completed_percentage, total, pending]
+    # p "You have completed #{completed_percentage}% of your #{total} tasks, which leaves #{pending} remaining tasks to be completed! You can do it!"
+    ["all completed", all_completed, "completed perentage", completed_percentage, "total", total, "pending", pending]
   end 
 
   def num_tasks_per_category
@@ -62,7 +62,7 @@ class User < ApplicationRecord
     today= Time.now
     time_diff = ((today - created) / 1.hour).round
 
-    puts "You have been a member for #{time_diff} hours."
+    time_diff
   end 
 
   def most_productive_day

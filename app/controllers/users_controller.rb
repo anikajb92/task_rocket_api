@@ -45,6 +45,11 @@ class UsersController < ApplicationController
     render json: @user, status: :updated
   end 
 
+  def stats 
+    render json: @user, 
+    methods: [:perc_tasks_completed, :num_tasks_per_category, :user_active] 
+  end 
+
   private #PRIVATE!! 
 
   def user_params
