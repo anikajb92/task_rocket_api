@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def allinfo #tasks and stats
     render json: @user,
-    methods: [:sorted_tasks, :completed_tasks], 
+    methods: [:sorted_tasks, :completed_tasks, :perc_tasks_completed, :num_tasks_per_category, :user_active], 
     status: :ok
   end 
 

@@ -13,10 +13,11 @@ class TasksController < ApplicationController
   def create 
     @new_task = Task.new task_params
     @new_task.user = @user 
+    @data = @task.user.perc_tasks_completed
 
     if @new_task.valid?
       @new_task.save
-      render json: @new_task, status: :created
+      render json: {new_task: @new_task, data: @data}, status: :created
     else
       render json: { errors: @new_task.errors.full_messages}, status: :unprocessable_entity 
     end 
@@ -37,7 +38,9 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find params[:id]
     @task.destroy
-    render json: {message: 'Successfully deleted'}, status: :no_content
+    @data = @task.user.perc_tasks_completed
+
+    render json: {data: @data, message: 'Successfully deleted'}, status: :ok
   end
 
   private 
