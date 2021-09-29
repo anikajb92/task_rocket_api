@@ -8,12 +8,14 @@ class User < ApplicationRecord
     pending = self.tasks.where(completed: false)
     sorted = pending.sort_by { |task| [task.priority]}
 
-    sorted
+    sorted.reverse
   end
   
   def completed_tasks
-    completed = self.tasks.where(completed: true)
-    p completed
+    init_completed = self.tasks.where(completed: true)
+    sorted_completed = init_completed.sort_by { |task| [task.priority]}
+    
+    sorted_completed.reverse
   end
 
   def perc_tasks_completed

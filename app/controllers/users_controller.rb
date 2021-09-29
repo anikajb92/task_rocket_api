@@ -11,6 +11,12 @@ class UsersController < ApplicationController
     render json: {user: @user}, status: :ok # can add 'include key value pair' here (but need to set up relationships first)
   end 
 
+  def alltasks
+    render json: @user,
+    methods: [:sorted_tasks, :completed_tasks], 
+    status: :ok
+  end 
+
   def create
     @user = User.create user_params
 
