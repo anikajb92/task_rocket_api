@@ -25,9 +25,10 @@ class TasksController < ApplicationController
   def update
     @task = Task.find params[:id]
     @task.update task_params
+    @data = @task.user.perc_tasks_completed
 
     if @task.save
-      render json: @task, status: :accepted
+      render json: {task: @task, data: @data}, status: :accepted
     else
       render json: {errors: @task.errors.full_messages}, status: :forbidden
     end
