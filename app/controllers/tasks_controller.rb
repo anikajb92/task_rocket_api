@@ -13,10 +13,11 @@ class TasksController < ApplicationController
   def create 
     @new_task = Task.new task_params
     @new_task.user = @user 
+    @data = @new_task.user.perc_tasks_completed
 
     if @new_task.valid?
       @new_task.save
-      render json: @new_task, status: :created
+      render json: {new_task: @new_task, data: @data}, status: :created
     else
       render json: { errors: @new_task.errors.full_messages}, status: :unprocessable_entity 
     end 
