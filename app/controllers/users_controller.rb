@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end 
 
   def profile
-    render json: {user: @user}, status: :ok # can add 'include key value pair' here (but need to set up relationships first)
+    render json: {user: @user}, methods: [:user_active], status: :ok # can add 'include key value pair' here (but need to set up relationships first)
   end 
 
   def allinfo #tasks and stats
