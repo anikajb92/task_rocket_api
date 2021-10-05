@@ -62,7 +62,7 @@ class User < ApplicationRecord
   def user_active
     created = self.created_at
     today= Time.now
-    time_diff = ((today - created) / 1.hour).round
+    time_diff = ((today - created) / 1.day).round
 
     time_diff
   end 
