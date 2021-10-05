@@ -72,11 +72,11 @@ class User < ApplicationRecord
 
     completed_weekday = all_completed.map do |task|
       finish_date = task.updated_at.strftime("%A")
-    end
+    end.group_by(&:itself).transform_values(&:count) # returns hash with "Day"=>tally pairs for each day of the week
 
-    completed_weekday.group_by(&:itself).transform_values(&:count)
-    # tally = ^
-    # tally.max
+    completed_weekday.sort_by { |k , v| v }.reverse #returns array with [Day, value] pairs sorted by highest value first
+    
+    
   end
 
 end
