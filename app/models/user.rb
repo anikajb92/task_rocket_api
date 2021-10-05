@@ -37,6 +37,10 @@ class User < ApplicationRecord
     [["Work", work],["Personal", personal], ["Household", household], ["Social", social]]
   end 
 
+  def most_tasks_per_category
+    num_tasks_per_category.sort_by { |k,v| v}.reverse.first
+  end 
+
   def avg_completion_time
     all_completed = self.tasks.where(completed: true)
     total = self.tasks.where(completed: true).count
