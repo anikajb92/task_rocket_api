@@ -48,15 +48,15 @@ class User < ApplicationRecord
       # finish_time = task.updated_at.strftime("%k:%M")
       time_diff = (finish_date - start_date)
 
-      time_diff_formatted = (time_diff / 1.day).round
+      time_diff_formatted = (time_diff / 1.hour).round
       
       time_diff_formatted
       # puts "This task was created on #{start_date} at #{start_time} and finished on #{finish_date} at #{finish_time}"
-    end 
+    end.sum # sum of the entire array 
 
-    # avg = (time_diff_formatted.sum / total)
+    avg = (completion_time.to_f / total.to_f) # avg for all tasks
 
-  #  p completion_time.to_f / total.to_f
+    avg.round(2) # rounds to the nearest .01
   end 
 
   def user_active
