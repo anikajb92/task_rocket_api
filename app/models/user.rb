@@ -86,7 +86,8 @@ class User < ApplicationRecord
   def num_tasks_per_priority
     high = self.tasks.where(priority: '3').count
     medium = self.tasks.where(priority: '2').count
+    low = self.tasks.where(priority: '1').count
     
-    [["High", high], ["Medium", medium]]
+    [["High", high], ["Medium", medium], ["Low", low]]
   end 
 end
