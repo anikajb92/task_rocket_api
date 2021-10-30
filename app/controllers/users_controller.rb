@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     render json: @user,
     methods: [:sorted_tasks, :completed_tasks, :perc_tasks_completed, 
       :num_tasks_per_category, :user_active, :avg_completion_time, 
-      :most_productive_day, :most_tasks_per_category], 
+      :most_productive_day, :most_tasks_per_category, :num_tasks_per_priority], 
     status: :ok
   end 
 
