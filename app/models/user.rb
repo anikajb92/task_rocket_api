@@ -83,4 +83,8 @@ class User < ApplicationRecord
     arr.first #returns first hash in the first pair in the array
   end
 
+  def num_tasks_per_priority
+    high = self.tasks.where(priority: '3').count
+    [["High", high]]
+  end 
 end
