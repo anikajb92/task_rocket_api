@@ -1,6 +1,6 @@
 # Task Rocket API
 
-This repository holds the backend code for the [Task Rocket App](https://github.com/anikajb92/task-rocket-app).
+Task Rocket is a Full-Stack Web Application. This is the repository for the backend task_rocket_api. The frontend repository can be found [here](https://github.com/anikajb92/task-rocket-app).
 
 
 ## Ruby version
