@@ -19,3 +19,38 @@ ruby 2.6.6
 `rails s`
 
 Run rails server
+
+## Code Examples
+
+```ruby
+def most_productive_day
+    all_completed = self.tasks.where(completed: true)
+
+    completed_weekday = all_completed.map do |task|
+      finish_date = task.updated_at.strftime("%A")
+    end.group_by(&:itself).transform_values(&:count) # returns hash with "Day"=>tally pairs for each day of the week
+
+    arr = completed_weekday.sort_by { |k , v| v }.reverse #returns array with [Day, value] pairs sorted by highest value first
+    
+    arr.first #returns first hash in the first pair in the array
+  end
+```
+
+```ruby
+def authenticate
+    auth_header = request.headers[:Authorization]
+    if !auth_header
+      render json: {error: 'Auth bearer token header is required'}, status: :forbidden
+    else 
+      token = auth_header.split(' ')[1]
+      secret = '*#*#*' #enter protected secret here
+      begin
+        decoded_token = JWT.decode token, secret
+        payload = decoded_token.first
+        @user = User.find payload['user_id'] #instance variable that can be carried across methods
+      rescue 
+        render json: {error: 'Unrecognized auth bearer token'}, status: :forbidden
+      end
+    end 
+  end
+```
