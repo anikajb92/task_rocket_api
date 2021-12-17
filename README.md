@@ -7,10 +7,15 @@ Task Rocket is a Full-Stack Web Application. This is the repository for the back
 
 ruby 2.6.6
 
+## Technologies
+
+* Ruby on Rails
+* Active Record
+
 ## Database and System dependencies
 
 * PostgreSQL
-* This API also utilizes rack-cors, JSON web tokens, and Bcrypt
+* This API also utilizes rack-cors, JSON web tokens, Bcrypt, and Pry
 
 ## Launch
 * Initialize DB 
