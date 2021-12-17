@@ -1,24 +1,21 @@
-# README
+# Task Rocket API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository holds the backend code for the Task Rocket App.
 
 Things you may want to cover:
 
-* Ruby version
+## Ruby version
 
-* System dependencies
+ruby 2.6.6
 
-* Configuration
+## Database and System dependencies
 
-* Database creation
+* PostgreSQL
+* This API also utilizes rack-cors, JSON web tokens, and Bcrypt
 
-* Database initialization
+## How to run the test suite
+* Initialize DB 
 
-* How to run the test suite
+`rails s`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run rails server
