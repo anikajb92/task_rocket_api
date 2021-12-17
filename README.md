@@ -2,7 +2,6 @@
 
 This repository holds the backend code for the Task Rocket App.
 
-Things you may want to cover:
 
 ## Ruby version
 
@@ -13,14 +12,14 @@ ruby 2.6.6
 * PostgreSQL
 * This API also utilizes rack-cors, JSON web tokens, and Bcrypt
 
-## How to run the test suite
+## Launch
 * Initialize DB 
+* Run rails server `rails s`
 
-`rails s`
-
-Run rails server
 
 ## Code Examples
+
+ Class Method I created to track a user's 'most productive day' based on the day of the week that most tasks are completed on.
 
 ```ruby
 def most_productive_day
@@ -35,6 +34,7 @@ def most_productive_day
     arr.first #returns first hash in the first pair in the array
   end
 ```
+This method is built in the application controller to authorize login and protect routes.
 
 ```ruby
 def authenticate
