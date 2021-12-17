@@ -1,6 +1,6 @@
 # Task Rocket API
 
-This repository holds the backend code for the Task Rocket App.
+This repository holds the backend code for the [Task Rocket App](https://github.com/anikajb92/task-rocket-app).
 
 
 ## Ruby version
@@ -15,7 +15,7 @@ ruby 2.6.6
 ## Launch
 * Initialize DB 
 * Run rails server `rails s`
-
+* In order to use the full app, open and run the [frontend repo](https://github.com/anikajb92/task-rocket-app)
 
 ## Code Examples
 
